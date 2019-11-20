@@ -39,7 +39,7 @@ and prediction results will be saved as CSV file in `storage` directory
 
 ## Making prediction using API endpoint
 
-1. 
+1. Set flask app to run
 ```
 $ export FLASK_APP=app.py 
 ```
@@ -51,12 +51,6 @@ $ flask run
 ```
 
 3. Go to your browser and go to the API endpoint
+`http://127.0.0.1:5000/api?age=45&gender=4&marital=2&residence=2&exceed=1&advance=0&pass_due=`
 
-Try a different model:
-
-```
-python search.py rambo test_8
-```
-## Use it on your own data
-
-If you want to reuse these scripts on your own data, choose the names of files and models, change or copy the settings.cfg. If you want to use your own file, change the utils.py.
+The value above is preset for test purpose only
