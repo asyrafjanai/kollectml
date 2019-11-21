@@ -6,7 +6,8 @@ import joblib
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-cache_dir = os.path.join(os.getcwd(), 'storage')
+root_dir = os.path.dirname(os.path.abspath('kollect'))
+cache_dir = os.path.join(root_dir, 'storage')
 
 @app.route('/')
 def index():
