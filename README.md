@@ -21,18 +21,18 @@ used the sample data in storage folder
 ## Start training ML model
 
 ```
-python train.py
+$ python train.py
 ```
 
 Next, to see the model performance, run:
 ```
-python inspect_performance.py
+$ python inspect_performance.py
 ```
 
 Then you can do batch prediction using
 
 ```
-python predict.py 
+$ python predict.py 
 ```
 
 and prediction results will be saved as CSV file in `storage` directory
