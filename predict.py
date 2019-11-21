@@ -2,11 +2,9 @@ import os
 import joblib
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.model_selection import KFold, LeaveOneOut
-from sklearn.metrics import *
 
-cache_dir = os.path.join(os.getcwd()[:-6], 'storage')
+root_dir = os.path.dirname(os.path.abspath('kollect'))
+cache_dir = os.path.join(root_dir, 'storage')
 
 def make_prediction(x):
     """

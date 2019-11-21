@@ -5,12 +5,16 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from xgboost import XGBClassifier
 
-cache_dir = os.getcwd()[:-6]
+root_dir = os.path.dirname(os.path.abspath('kollect'))
+cache_dir = os.path.join(root_dir, 'storage')
+print(f'root_dir: {root_dir}')
+print(f'cache_dir: {cache_dir}')
 
 def split_df(rs=1, test_size=0.25):
 
     print('Preprocessing data!')
-    df_path = os.path.join(cache_dir, 'storage', 'data.xlsx')
+    df_path = os.path.join(cache_dir, 'data.xlsx')
+    print(df_path)
     df = pd.read_excel(df_path)
     print(df.head())
     X = df.iloc[:, 1:-1]
@@ -31,7 +35,7 @@ def train_model():
     print('Training model!')
     clf = XGBClassifier()
     clf.fit(X_train, y_train.values.ravel())
-    model_path = os.path.join(cache_dir, 'storage', 'model.sav')
+    model_path = os.path.join(cache_dir, 'model.sav')
     # clf.save_model(model_path)
     # filename = 'finalized_model.sav'
     joblib.dump(clf, model_path)

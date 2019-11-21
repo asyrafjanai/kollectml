@@ -1,14 +1,15 @@
 import os
 import joblib
 import pandas as pd
-import numpy as np
-from module import train, predict
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.model_selection import KFold, LeaveOneOut
+from train import preprocess_data
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import KFold
 from sklearn.metrics import *
-import matplotlib.pyplot as plt
 
-cache_dir = os.path.join(os.getcwd()[:-6], 'storage')
+root_dir = os.path.dirname(os.path.abspath('kollect'))
+cache_dir = os.path.join(root_dir, 'storage')
+print(f'root_dir: {root_dir}')
+print(f'cache_dir: {cache_dir}')
 
 def inspect_model(model, X_train, y_train, X_test, y_test):
     kfold = KFold(n_splits=5, shuffle=True, random_state=42)
@@ -38,5 +39,5 @@ def inspect_model(model, X_train, y_train, X_test, y_test):
 
 if __name__ == '__main__':
     model = joblib.load(os.path.join(cache_dir, 'model.sav'))
-    X_train, X_test, y_train, y_test = train.preprocess_data()
+    X_train, X_test, y_train, y_test = preprocess_data()
     inspect_model(model, X_train, y_train, X_test, y_test)
