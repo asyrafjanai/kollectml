@@ -16,7 +16,7 @@ $ conda env create -f kollect.yml
 ## Download the data
 
 The first time you run this demo, fetch the data from onedrive/or 
-used the sample data in storage folder
+use the sample data in storage folder
 
 ## Start training ML model
 
@@ -29,13 +29,13 @@ Next, to see the model performance, run:
 $ python inspect_performance.py
 ```
 
-Then you can do batch prediction using
+Then you can do batch prediction (on sample data - `test prediction.csv`) using 
 
 ```
 $ python predict.py 
 ```
 
-and prediction results will be saved as CSV file in `storage` directory
+and prediction results will be saved as CSV file `prediction_df.csv` in `storage` directory
 
 ## Making prediction using API endpoint
 
@@ -53,4 +53,4 @@ $ flask run
 3. Go to your browser and go to the API endpoint
 `http://127.0.0.1:5000/api?age=45&gender=4&marital=2&residence=2&exceed=1&advance=0&pass_due=`
 
-The value above is preset for test purpose only
+_Note:The parameter above is preset for test purpose only_
