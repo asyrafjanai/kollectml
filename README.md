@@ -10,7 +10,7 @@ This demo requires
 - Install the requirements and dependencies library
 
 ```
-$ conda env create -f environment.yml
+$ conda env create -f kollect.yml
 ```
 
 ## Download the data
