@@ -51,6 +51,6 @@ $ flask run
 ```
 
 3. Go to your browser and go to the API endpoint
-`http://127.0.0.1:5000/api?age=45&gender=4&marital=2&residence=2&exceed=1&advance=0&pass_due=`
+`http://127.0.0.1:5000/api?age=45&gender=4&marital=2&residence=2&exceed=1&advance=0&pass_due=2`
 
 _Note:The parameter above is preset for test purpose only_
